@@ -15,46 +15,46 @@
       <div class="card-body">
         <p class=""><h4>Proyek</h4></p>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0 mt-3">Nama Proyek</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0 mt-3">{{ $proyek->nama_proyek }}</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Nominal</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">Rp{{ $proyek->nominal}}</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Deskripsi</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">{{ $proyek->deskripsi }}</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Tanggal Dibuka</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">{{ $proyek->tgl_dibuka }}</p>
           </div>
         </div>
         <hr>   
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Tanggal Ditutup</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">{{ $proyek->tgl_ditutup }}</p>
           </div>
         </div>
@@ -69,28 +69,28 @@
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Status</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">{{ $proyek->status }}</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Dana Masuk</p>
           </div>
-          <div class="col-sm-9">
-            <p class="text-muted mb-0">Rp{{ $sum }}</p>
+          <div class="col-sm-7">
+            <p class="text-muted mb-0">Rp{{ $sum }} / Rp{{ $proyek->nominal }}</p>
           </div>
         </div>
         <hr>
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0">Dana yang harus dikembalikan</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0">Rp{{ $pengembalian }}</p>
           </div>
         </div>
@@ -98,20 +98,20 @@
         <p class="mt-4"><h4>Investor</h4></p>
 
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0 mt-3"><b>Nama Investor</b></p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0 mt-3"><b>Nominal Investasi</b></p>
           </div>
         </div>
         <hr>
         @foreach ($details as $detail)
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-5">
             <p class="mb-0 mt-3">{{ $detail->transaksi->investor->user->name }}</p>
           </div>
-          <div class="col-sm-9">
+          <div class="col-sm-7">
             <p class="text-muted mb-0 mt-3">Rp{{ $detail->transaksi->nominal }}</p>
           </div>
         </div>
@@ -127,8 +127,13 @@
         <p class="mt-3">Bukti Pembayaran</p>
         <img src="{{ asset('storage/' . $status->image) }}" class="img-fluid mt-3 rounded">
         @elseif ($status->status == 'diproses')
-        <div class="d-flex justify-content-center">
-          <a class="btn btn-success me-2 mt-5"> Pengembalian dana sedang diproses</a>  
+        <div class="d-flex justify-content-center mt-5">
+          <div class="col col-lg-6">
+          <a class="btn btn-warning me-2"> Pengembalian dana sedang diproses</a>  
+        </div>
+        <div class="col col-lg-6">
+          <a href="/m/proyek/pengembalian/{{ $proyek->id }}" data-bs-toggle="modal" data-bs-target="#perbarui" class="btn btn-success me-2 mt-2"> <span data-feather="arrow-right"></span> Perbarui foto</a>
+        </div>
         </div>
         <p class="mt-3">Bukti Pembayaran</p>
         <img src="{{ asset('storage/' . $status->image) }}" class="img-fluid mt-3 rounded">

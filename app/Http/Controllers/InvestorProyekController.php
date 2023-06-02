@@ -15,9 +15,21 @@ class InvestorProyekController extends Controller
      */
     public function index()
     {
+        $proyeks = proyek::where('status','rilis')->get();
+        $details = detailTransaksi::all();
+        $list_detail = [];
+        
+        foreach($details as $detail){            
+            if($detail->proyek->status == 'rilis'){
+                $list_detail[] = $detail;
+            }
+            
+        }
+
         return view('investor.proyek.index',[
             'title' => 'proyek investasi',
-            'proyeks' => proyek::where('status','rilis')->get()
+            'details' => $list_detail,
+            'proyeks' => $proyeks            
         ]);
     }
 

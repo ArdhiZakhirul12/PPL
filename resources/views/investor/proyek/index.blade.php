@@ -7,7 +7,27 @@
 <div class="container mt-5 mb-3">
     <div class="row">
         @if (count($proyeks)>0)
-        @foreach($proyeks as $proyek)
+        @foreach($proyeks as $proyek)      
+        {{-- @php
+        $sum = 0   
+        @endphp 
+        @foreach($details as $detail)        
+        @if  ($detail->proyek->status == $proyek->status)
+        @if ($detail->status == 'dibayar')         
+        @php
+        $temp = $detail->transaksi->nominal;
+        $sum += $temp;
+        @endphp
+        @endif
+        @else
+        @php
+         $sum = 0   
+        @endphp
+        @endif
+        @endforeach
+         --}}
+
+
         <div class="col-md-4">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
@@ -16,8 +36,7 @@
                         <div class="ms-2 c-details">
                             <h6 class="mb-0">{{ $proyek->mitra->nama_usaha }}</h6> <span>Rp{{ $proyek->nominal }}</span>
                         </div>
-                    </div>
-                    {{-- <div class="badge"> <span>Design</span> </div> --}}
+                    </div>                    
                 </div>
                 <div class="mt-5">
                     <h3 class="heading">{{ $proyek->nama_proyek }}</h3>
