@@ -12,8 +12,7 @@
 <div class="container mt-5 mb-3">
     <div class="row">
         @if (count($details)>0)
-        @foreach($details as $detail)
-        @if($detail->transaksi->user_id = $investor)
+        @foreach($details as $detail)        
         <div class="col-md-4">
             <div class="card p-3 mb-2">
                 <div class="d-flex justify-content-between">
@@ -35,8 +34,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        @endif
+        </div>        
         @endforeach
         @else
         <div class="position-absolute top-50 start-50"><h3 class="text-muted">Belum ada Transaksi Investasi</h3></div>

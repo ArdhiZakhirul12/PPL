@@ -21,10 +21,19 @@ class InvestorTransaksiController extends Controller
     public function index()
     {
         $user = User::find(auth()->user()->id);
-        
+        $details = detailTransaksi::all();
+        $detail = [];
+
+        foreach($details as $det){
+            if($det->transaksi->investor->user_id == $user->id){
+                $detail[] = $det;
+            }                     
+        }     
+ 
         return view('investor.transaksi.index', [
-            "title" => "Transaksi",
-            'details' => detailTransaksi::all(),
+            "title" => "Transaksi",            
+            'details' => $detail,
+            
             'investor' => investor::where('user_id', $user->id)->first(),
         ]);
     }
