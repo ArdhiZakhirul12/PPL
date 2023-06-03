@@ -24,7 +24,7 @@
                 @if($mitra->image)
                 <img src="{{ asset('storage/' . $mitra->image) }}" class="rounded" width="150" height="150" >
                 @else
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"    alt="avatar"
              width="150 ">
                 @endif
                 </div>

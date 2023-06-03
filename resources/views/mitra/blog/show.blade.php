@@ -6,7 +6,7 @@
         <div class="col-lg-8">
             <h2 class="mb-5">{{ $post->judul }}</h2>
             <a href="/m/blog/" class="btn btn-info me-2"> <span data-feather="arrow-left"></span> Kembali</a>  
-            <a href="/m/blog/{{ $post->slug }}/edit" class="btn btn-warning me-2"><span data-feather="edit-2"> </span> Edit</a>  
+            <a href="/m/blog/{{ $post->slug }}/edit" class="btn btn-warning me-2"><span data-feather="edit-2"> </span> Ubah</a>  
             <form action="/m/blog/{{ $post->slug }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf

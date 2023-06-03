@@ -143,7 +143,7 @@ class MitraBlogController extends Controller
         blog::Where('id', $blog->id)
             ->update($validatedData);;
 
-        return redirect('/m/blog')->with('success', 'Berhasil mengedit blog!');
+        return redirect('/m/blog')->with('success', 'Berhasil mengubah blog!');
     }
 
     /**

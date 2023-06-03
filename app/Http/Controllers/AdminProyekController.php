@@ -16,9 +16,15 @@ class AdminProyekController extends Controller
      */
     public function index()
     {
+        $rilis = proyek::where('status','rilis')->get();
+        $diproses = proyek::where('status','diproses')->get();
+        $selesai = proyek::where('status','selesai')->get();
+
         return view('admin.proyek.index', [
             'title' => 'Proyek Saya',
-            'proyeks' => proyek::all()
+            'rilis' => $rilis,
+            'diproses' => $diproses,
+            'selesai' => $selesai
         ]);
     }
 

@@ -85,7 +85,7 @@ class InvestorKtpController extends Controller
         ->update($validated);;
 
     
-    return redirect('/i/akun')->with('success', 'Berhasil mengubah foto KTP!');
+    return redirect('/i/akun')->with('success', 'KTP Berhasil Ditambahkan!');
     }
 
     /**

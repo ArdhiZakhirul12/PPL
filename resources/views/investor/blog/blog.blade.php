@@ -16,7 +16,7 @@
                 <h5 class="card-title">{{ $item->judul }}</h5>
                 <p class="card-title text-muted">{{ $item->mitra->nama_usaha }}</p>
                 <p class="card-text">{{ $item->excerpt }}</p>
-               <a href="/i/blog/{{ $item->id }}" class="btn btn-outline-success btn-sm">Read More</a>
+               <a href="/i/blog/{{ $item->id }}" class="btn btn-outline-success btn-sm">Baca</a>
                 {{-- <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a> --}}
               </div>
              </div>

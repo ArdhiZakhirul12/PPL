@@ -21,7 +21,7 @@
                 <h5 class="card-title">{{ $item->judul }}</h5>
                 <p class="card-title text-muted">{{ $item->mitra->nama_usaha }}</p>
                 <p class="card-text">{{ $item->excerpt }}</p>
-               <a href="/a/blog/{{ $item->id }}" class="btn btn-outline-success btn-sm">Read More</a>
+               <a href="/a/blog/{{ $item->id }}" class="btn btn-outline-success btn-sm">Baca</a>
                <form action="/a/blog/{{ $item->id }}" method="post" class="d-inline">
                 @method('delete')
                 @csrf

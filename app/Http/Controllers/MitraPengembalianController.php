@@ -84,7 +84,7 @@ class MitraPengembalianController extends Controller
         ->update([
             'image' => $request->file('image')->store('post-image'),
         ]);
-        return redirect('/m/proyek')->with('success', 'Berhasil memperbarui pengembalian dana!');
+        return redirect('/m/proyek')->with('success', 'Berhasil mengubah pengembalian dana!');
     }
 
     /**

@@ -132,14 +132,14 @@
           <a class="btn btn-warning me-2"> Pengembalian dana sedang diproses</a>  
         </div>
         <div class="col col-lg-6">
-          <a href="/m/proyek/pengembalian/{{ $proyek->id }}" data-bs-toggle="modal" data-bs-target="#perbarui" class="btn btn-success me-2 mt-2"> <span data-feather="arrow-right"></span> Perbarui foto</a>
+          <a href="/m/proyek/pengembalian/{{ $proyek->id }}" data-bs-toggle="modal" data-bs-target="#perbarui" class="btn btn-success me-2 mt-2"> <span data-feather="arrow-right"></span> Ubah Transaksi</a>
         </div>
         </div>
         <p class="mt-3">Bukti Pembayaran</p>
         <img src="{{ asset('storage/' . $status->image) }}" class="img-fluid mt-3 rounded">
         @elseif ($status->status == 'gagal')
         <p class="mt-5"><h5>Foto yang anda kirim tidak valid, segera perbarui foto!</h5></p>
-        <a href="/m/proyek/pengembalian/{{ $proyek->id }}" data-bs-toggle="modal" data-bs-target="#perbarui" class="btn btn-success me-2 "> <span data-feather="arrow-right"></span> Perbarui foto</a>
+        <a href="/m/proyek/pengembalian/{{ $proyek->id }}" data-bs-toggle="modal" data-bs-target="#perbarui" class="btn btn-success me-2 "> <span data-feather="arrow-right"></span> Ubah Transaksi</a>
         <p class="mt-3">Bukti Pembayaran</p>
         <img src="{{ asset('storage/' . $status->image) }}" class="img-fluid mt-3 rounded">
         @endif
