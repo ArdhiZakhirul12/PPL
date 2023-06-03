@@ -4,6 +4,11 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2">Proyek Investasi | {{ $proyek->nama_proyek }}</h1>
 </div>
+@if(session()->has('success'))
+  <div class="alert alert-success col-lg-9" role="alert">
+    {{ session('success') }}
+  </div>
+  @endif
 <div class="mb-3">
 <a href="/a/proyek" class="btn btn-info me-2"> <span data-feather="arrow-left"></span> Kembali</a>  
 

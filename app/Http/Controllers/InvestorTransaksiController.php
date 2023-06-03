@@ -167,7 +167,7 @@ class InvestorTransaksiController extends Controller
         transaksiInvestasi::Where('id', $id)
             ->update($validatedData);;
 
-            return redirect('/i/transaksi')->with('success', 'Berhasil mengedit data transaksi investasi!');
+            return redirect('/i/transaksi')->with('success', 'Berhasil mengubah data transaksi investasi!');
     }
 
     /**
