@@ -1,20 +1,21 @@
 @extends('layout.home')
 @section('container')
-<div class="row justify-content-center">
+<div id="body" class="row justify-content-center">
+  <img src="https://img.freepik.com/free-vector/hand-drawn-flat-illustration-power-plant_23-2149126627.jpg?w=826&t=st=1685856768~exp=1685857368~hmac=f16fcd5c34ed03dc5f3c59492e4bd0a7fb41f8e8adb94414cc44e48de57d6442" class="bg" alt="">
   <div class="col-md-4">
     @if(session()->has('success'))
     <div class="alert alert-success" role="alert">
       <i class="bi bi-check-circle-fill"> </i>{{ session('success') }}
     </div>
-      @endif
-
-      @if(session()->has('loginError'))
+    @endif
+    
+    @if(session()->has('loginError'))
     <div class="alert alert-danger" role="alert">
       <i class="bi bi-exclamation-circle-fill"></i>  {{ session('loginError') }}
     </div>
-      @endif
-        <main class="form-signin w-100 m-auto">
-            <h1 class="h3 mb-3 fw-normal text-center" >Login</h1>
+    @endif
+    <main class="form-signin w-100 m-auto">
+      <h1 class="h3 mb-3 fw-normal text-center mt-5" >Login</h1>
             <form class="justify-content-center" action="/login" method="post">
               @csrf
               <div class="form-floating">
@@ -56,4 +57,12 @@
     </div>
 </div>
 
+<style>
+  .bg{
+    height: 88%;
+    
+    position: absolute;
+    z-index: -3;
+  }
+</style>
 @endsection
