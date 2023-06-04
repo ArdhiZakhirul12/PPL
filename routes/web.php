@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminProfilController;
 use App\Http\Controllers\AdminProyekController;
 use App\Http\Controllers\AdminTransaksiController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InvestorAkunController;
 use App\Http\Controllers\InvestorController;
 use App\Http\Controllers\InvestorKtpController;
@@ -55,6 +56,7 @@ Route::resource('i/profil', InvestorProfilController::class)->middleware('invest
 Route::resource('i/transaksi', InvestorTransaksiController::class)->middleware('investor');
 Route::get('/i/transaksi/create/{id}',[InvestorTransaksiController::class,'create'])->middleware('investor');
 Route::post('/i/transaksi/{id}',[InvestorTransaksiController::class,'store']);
+Route::get('/i/dashboard', [DashboardController::class,'investor'])->middleware('investor');
 // Admin
 Route::resource('/a/mitra',AdminController::class)->middleware('admin');
 Route::resource('/a/investor',AdminInvestorController::class)->middleware('admin');
@@ -64,6 +66,7 @@ Route::resource('/a/proyek',AdminProyekController::class)->middleware('admin');
 Route::resource('a/profil', AdminProfilController::class)->middleware('admin');
 Route::resource('a/transaksi', AdminTransaksiController::class)->middleware('admin');
 Route::resource('a/pengembalian', AdminPengembalianController::class)->middleware('admin');
+Route::get('/a/dashboard', [DashboardController::class,'admin'])->middleware('admin');
 
 // Mitra
 Route::resource('/m/blog', MitraBlogController::class)->middleware('mitraValid');
@@ -73,6 +76,7 @@ Route::resource('/m/akun', MitraAkunController::class)->middleware('mitra');
 Route::resource('/m/ktp', MitraKtpController::class)->middleware('mitra');
 Route::resource('/m/profil', MitraProfilController::class)->middleware('mitraValid');
 Route::post('/getKabupaten', [MitraAkunController::class,'getKabupaten'])->middleware('mitra')->name('getKabupaten');
+Route::get('/m/dashboard', [DashboardController::class,'mitra'])->middleware('mitra');
 
 
 // Auth
