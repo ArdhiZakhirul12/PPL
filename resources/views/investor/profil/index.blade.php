@@ -57,7 +57,7 @@
                             <h6 class="text-muted  f-w-400">{{ $mitra->bio }}</h6>
                         </div>
                         <div class="col-sm-6">
-                            <a href="/i/profil/{{ $mitra->id }}" type="button" class="btn btn-primary">Kunjungi</a>
+                            <a href="/i/profil/{{ $mitra->id }}" type="button" class="btn btn-primary">Lihat</a>
                         </div>
                         
                     </div>   
