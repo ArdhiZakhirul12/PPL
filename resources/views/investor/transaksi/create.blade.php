@@ -12,12 +12,12 @@
       <label for="nominal" class="form-label">Nominal</label>
       <small><p>Harap Mengisi Minimal Rp100.000</p></small>
       <small><p>Harap Mengisi Maximal Rp{{ $max }}</p></small>
-      <div class="input-group mb-3 mt-3" >
+      {{-- <div class="input-group mb-3 mt-3" >
       <span class="input-group-text">Rp</span>
-      <div class="form-floating">
+      <div class="form-floating"> --}}
       <input type="text" class="form-control @error('nominal') is-invalid @enderror" id="nominal" name="nominal" required autofocus value="{{ old('nominal') }}">
-    </div>
-      </div>
+    {{-- </div>
+      </div> --}}
       @error('nominal')
       <div class="invalid-feedback">
         {{ $message }}
